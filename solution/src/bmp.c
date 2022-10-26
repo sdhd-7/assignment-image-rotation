@@ -92,5 +92,6 @@ enum write_status to_bmp( FILE* out, struct image const* img ){
         for(int j = 0; j < pass; ++j)
             fwrite(&z, sizeof(uint8_t), 1, out);
     }
+    free(img->data);
     return WRITE_OK;
 }
