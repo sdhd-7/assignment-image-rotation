@@ -14,5 +14,6 @@ struct image rotate( struct image const source ){
             tmp.data[source.height * (source.width - j - 1) + i] = source.data[i * source.width + j];
             //tmp.data[source.width * i + j] = source.data[i * source.width + j];
         }
+    free(source.data);
     return tmp;
 }
