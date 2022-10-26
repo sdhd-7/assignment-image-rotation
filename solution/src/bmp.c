@@ -43,7 +43,7 @@ enum read_status from_bmp( FILE* in, struct image* img ){
         return READ_INVALID_HEADER;
     img->width=tmp.biWidth;
     img->height=tmp.biHeight;
-    img->data=malloc(sizeof(struct pixel*) * img->height*img->width);
+    img->data=malloc(sizeof(struct pixel) * img->height*img->width);
     size_t pass = 0;
     for(int i = 0; i < img->height;++i){
         count = fread(&img->data[i*img->width], sizeof(struct pixel), img->width, in);
